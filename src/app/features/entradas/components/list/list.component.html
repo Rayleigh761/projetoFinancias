@@ -1,0 +1,61 @@
+<div class="container flex">
+
+    <button mat-raised-button color="accent" class="flex" (click)="novaEntrada()"> Novo</button>
+  
+  </div>
+  
+  <div class="container">
+  
+      <table mat-table [dataSource]="dataSource">
+    
+        <!-- nome Column -->
+        <ng-container matColumnDef="nome">
+          <th mat-header-cell *matHeaderCellDef> Nome </th>
+          <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+        </ng-container>
+    
+        <!-- Pago Column -->
+        <ng-container matColumnDef="pago">
+          <th mat-header-cell *matHeaderCellDef> Pago </th>
+          <td mat-cell *matCellDef="let element" [ngClass]="element.pago ? 'verde' : 'vermelho'" > {{element.pago | status}} </td>
+        </ng-container>
+    
+        <!-- Data Column -->
+        <ng-container matColumnDef="data">
+            <th mat-header-cell *matHeaderCellDef> Data </th>
+            <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+        </ng-container>
+
+        <!-- Valor Column -->
+        <ng-container matColumnDef="valor">
+            <th mat-header-cell *matHeaderCellDef> Valor </th>
+            <td mat-cell *matCellDef="let element"> {{element.valor}} </td>
+        </ng-container>        
+    
+        <!-- Tipo Column -->
+        <ng-container matColumnDef="tipo">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+        </ng-container>       
+
+        <!-- Editar Column -->
+        <ng-container matColumnDef="editar">
+          <th mat-header-cell *matHeaderCellDef> Editar </th>
+          <td mat-cell *matCellDef="let element"> <mat-icon (click)="chamarEdicao(element)" style="color: rgb(54, 54, 226); cursor: pointer;"> edit</mat-icon> </td>
+        </ng-container>
+    
+        <!-- Excluir Column -->
+        <ng-container matColumnDef="excluir">
+          <th mat-header-cell *matHeaderCellDef> Excluir </th>
+          <td mat-cell *matCellDef="let element"> <mat-icon style="color: rgb(235, 61, 61); cursor: pointer;" (click)="excluirEntrada(element.id)"> delete </mat-icon> </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    
+      <mat-paginator [pageSizeOptions]="[10, 20]"
+                     showFirstLastButtons
+                     aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </div>

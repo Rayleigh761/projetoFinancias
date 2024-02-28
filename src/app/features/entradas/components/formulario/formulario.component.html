@@ -1,0 +1,58 @@
+
+<div class="container">
+  <h1 class="center">Cadastro de Entradas</h1>
+</div>
+
+<div class="container flex">
+  <form [formGroup]="formEntradas">
+    <mat-form-field>
+          <mat-label>Entradas</mat-label>
+          <input matInput placeholder="Ex. Alimentação" formControlName="nome">
+      </mat-form-field>
+
+    <mat-form-field>
+          <mat-label>Valor</mat-label>
+          <input matInput placeholder="Valor" mask="separator.2" thousandSeparator="." prefix="R$" formControlName="valor">
+      </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Categoria</mat-label>
+          <mat-select formControlName="categoriaId">
+            <mat-option *ngFor="let categoria of categorias$ | async " [value]="categoria.id">
+              {{categoria.nome}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Status</mat-label>
+          <mat-select formControlName="pago">
+            <mat-option *ngFor="let status of statusDePagamento" [value]="status.value">
+              {{status.descricao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>      
+
+        <mat-form-field>
+          <mat-label>Tipo</mat-label>
+          <mat-select formControlName="tipo">
+            <mat-option *ngFor="let tipo of tiposDeEntradas" [value]="tipo">
+              {{tipo}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>      
+
+        <mat-form-field>
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="data">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+  </form>      
+
+  <button mat-raised-button color="primary" (click)="salvarEntrada()"> Salvar</button>
+
+</div>
+  
+
+    

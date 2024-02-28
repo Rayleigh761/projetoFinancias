@@ -1,0 +1,89 @@
+{
+  "categorias": [
+    {
+      "id": 3,
+      "nome": "Lazer",
+      "descricao": "Cinema, parques, praia, etc"
+    },
+    {
+      "id": 4,
+      "nome": "Salário",
+      "descricao": "Recebimento de Salário"
+    },
+    {
+      "id": 5,
+      "nome": "Freelas",
+      "descricao": "Trabalhos como freelancer"
+    },
+    {
+      "id": 6,
+      "nome": "Outros",
+      "descricao": "Outras despesas"
+    }
+  ],
+  "entradas": [
+    {
+      "nome": "Salário na Empresa X",
+      "categoriaId": 4,
+      "data": "09/11/2023",
+      "pago": true,
+      "tipo": "Receita",
+      "valor": 899,
+      "id": 3
+    },
+    {
+      "id": 6,
+      "nome": "Video Game",
+      "categoriaId": 3,
+      "pago": false,
+      "data": "17/03/2023",
+      "valor": "15,00",
+      "tipo": "Despesa"
+    },
+    {
+      "id": 12,
+      "nome": "Aluguel",
+      "categoriaId": 3,
+      "pago": false,
+      "data": "23/03/2023",
+      "valor": "15,00",
+      "tipo": "Despesa"
+    },
+    {
+      "id": 14,
+      "nome": "Pagamento Pelo Projeto XYZ",
+      "categoriaId": 5,
+      "pago": true,
+      "data": "25/03/2023",
+      "valor": "2980,00",
+      "tipo": "Receita"
+    },
+    {
+      "id": 22,
+      "nome": "Cinema",
+      "categoriaId": 3,
+      "pago": true,
+      "data": "18/04/2023",
+      "valor": "15,00",
+      "tipo": "Despesa"
+    },
+    {
+      "id": 44,
+      "nome": "Uber",
+      "categoriaId": 3,
+      "pago": true,
+      "data": "28/04/2023",
+      "valor": "15,00",
+      "tipo": "Despesa"
+    },
+    {
+      "nome": "gas",
+      "categoriaId": 6,
+      "data": "08/11/2023",
+      "pago": true,
+      "tipo": "Despesa",
+      "valor": "180",
+      "id": 46
+    }
+  ]
+}

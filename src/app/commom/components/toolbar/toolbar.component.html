@@ -1,0 +1,11 @@
+<mat-toolbar *ngIf="estaLogado">
+    <span>Minhas Finanças</span>
+    <span class="example-spacer"></span>
+    <div class="menu-item" *ngFor="let menu of menus">
+        <a [routerLink]="menu.rota" routerLinkActive="active">{{menu.descricao}}</a>
+    </div>
+    <div class="menu-item">
+        <a (click)="sair()">Sair</a>        
+    </div>
+</mat-toolbar>
+  
